@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CynologistPlusMobile.Views.DogsPage"
+             xmlns:local="clr-namespace:CynologistPlusMobile.Exentions;assembly=CynologistPlusMobile"
+             Title="{local:Translate DogsList}">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <ListView SelectedItem="{Binding SelectedDog, Mode=TwoWay}" HasUnevenRows="True" x:Name="friendsList" ItemsSource="{Binding Dogs}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" Padding="10">
+                                    <Label Text="{Binding Id}" FontSize="Medium" HorizontalOptions="StartAndExpand" />
+                                    <Label Text="{Binding Name}" FontSize="Small" HorizontalOptions="StartAndExpand" />
+                                    <Label Text="{Binding Breed}" FontSize="Small" HorizontalOptions="StartAndExpand" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
